@@ -1,0 +1,102 @@
+{
+  "version": "0.0.0",
+  "name": "pokemon",
+  "instructions": [
+    {
+      "name": "initialize",
+      "accounts": [
+        {
+          "name": "baseAccount",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "user",
+          "isMut": true,
+          "isSigner": true
+        },
+        {
+          "name": "systemProgram",
+          "isMut": false,
+          "isSigner": false
+        }
+      ],
+      "args": []
+    },
+    {
+      "name": "vote",
+      "accounts": [
+        {
+          "name": "baseAccount",
+          "isMut": true,
+          "isSigner": false
+        }
+      ],
+      "args": [
+        {
+          "name": "pkmOne",
+          "type": "string"
+        },
+        {
+          "name": "pkmTwo",
+          "type": "string"
+        },
+        {
+          "name": "pkmVoted",
+          "type": "string"
+        }
+      ]
+    }
+  ],
+  "accounts": [
+    {
+      "name": "BaseAccount",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "totalVotes",
+            "type": "u64"
+          },
+          {
+            "name": "pokemonPairs",
+            "type": {
+              "vec": {
+                "defined": "ItemStruct"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "types": [
+    {
+      "name": "ItemStruct",
+      "type": {
+        "kind": "struct",
+        "fields": [
+          {
+            "name": "pokemonOne",
+            "type": "string"
+          },
+          {
+            "name": "pokemonOneVotes",
+            "type": "u64"
+          },
+          {
+            "name": "pokemonTwo",
+            "type": "string"
+          },
+          {
+            "name": "pokemonTwoVotes",
+            "type": "u64"
+          }
+        ]
+      }
+    }
+  ],
+  "metadata": {
+    "address": "5G7W9cnCVxyEvdVGjryXoqngUb8BcoZmwUp8QBsSB9iM"
+  }
+}
