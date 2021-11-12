@@ -1,0 +1,12 @@
+[programs.devnet]
+pokemon = "5G7W9cnCVxyEvdVGjryXoqngUb8BcoZmwUp8QBsSB9iM"
+
+[registry]
+url = "https://anchor.projectserum.com"
+
+[provider]
+cluster = "devnet"
+wallet = "/home/xenkdress/.config/solana/id.json"
+
+[scripts]
+test = "node tests/test.js"
